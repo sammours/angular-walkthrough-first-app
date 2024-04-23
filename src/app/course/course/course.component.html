@@ -1,0 +1,47 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <div class="col-md-4">
+      Id
+    </div>
+    <div class="col-md-8">
+      <input type="number" name="id" [(ngModel)]="currentCourse.id" class="form-control" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      Name
+    </div>
+    <div class="col-md-8">
+      <input type="text" name="name" [(ngModel)]="currentCourse.name" class="form-control" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+    </div>
+    <div class="col-md-8">
+      <button class="btn btn-dark" (click)="save()">Save</button>
+    </div>
+  </div>
+  <br />
+  <table class="table table-bordered table-striped">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let course of courses">
+      <td>{{course.id}}</td>
+      <td>{{course.name}}</td>
+      <td>{{course.date}}</td>
+      <td>
+        <button class="btn btn-success" (click)="edit(course.id)">Edit</button> &nbsp;&nbsp;&nbsp;
+        <button class="btn btn-danger" (click)="delete(course.id)">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+
+</div>
